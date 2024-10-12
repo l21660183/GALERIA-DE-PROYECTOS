@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Sobre Mí</title> 
+
+    <style>
+        /* Estilos del Menú de Navegación */
+        body {
+            font-family: Arial, sans-serif; /* Fuente general para el contenido */
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            /* Barra de navegación fija en la parte superior de la página */
+            position: fixed;
+            top: 0;
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
+            background-color: #333; /* Fondo oscuro */
+            color: white; /* Texto blanco */
+            display: flex; /* Distribución en línea de los elementos */
+            justify-content: space-between; /* Espacio entre el logo y los enlaces */
+            align-items: center;
+            padding: 10px;
+            z-index: 1000; /* Asegura que el menú esté por encima del contenido */
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold; /* Negrita para el logo */
+        }
+
+        nav ul {
+            list-style: none; /* Quita los puntos de la lista */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Coloca los elementos de la lista en línea */
+        }
+
+        nav ul li {
+            margin-left: 20px; /* Espacio entre los elementos del menú */
+        }
+
+        nav ul li a {
+            color: white; /* Color blanco para los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            padding: 8px 12px; /* Espaciado dentro de los enlaces */
+            transition: background-color 0.3s ease; /* Efecto de transición al pasar el mouse */
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Color de fondo al pasar el mouse sobre los enlaces */
+        }
+
+        .hamburger {
+            display: none; /* Oculta el menú hamburguesa en pantallas grandes */
+            flex-direction: column; /* Disposición en columna para las líneas del menú */
+            cursor: pointer; /* Cambia el cursor a mano cuando se pasa sobre el menú hamburguesa */
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white; /* Color de las líneas del menú */
+            margin: 4px 0; /* Espacio entre las líneas */
+        }
+
+        /* Asegura que el contenido no quede cubierto por el menú */
+        #contenido {
+            padding-top: 60px; /* Deja espacio para que el contenido no quede detrás del menú fijo */
+        }
+
+        /* Responsividad para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex; /* Muestra el menú hamburguesa en pantallas pequeñas */
+            }
+
+            nav ul {
+                flex-direction: column; /* Organiza el menú en una columna */
+                display: none; /* Oculta el menú por defecto */
+                background-color: #333; /* Fondo oscuro para el menú desplegable */
+                position: absolute;
+                top: 100%; /* Aparece justo debajo del menú principal */
+                left: 0;
+                width: 100%; /* Ocupa todo el ancho de la pantalla */
+            }
+
+            nav ul.show {
+                display: flex; /* Muestra el menú cuando se activa */
+            }
+
+            nav ul li {
+                text-align: center; /* Centra los enlaces del menú */
+                margin: 0;
+            }
+        }
+
+        /* Estilos de la sección de Servicios */
+        h1 {
+            text-align: center; 
+        }
+
+        p {
+            text-align: center; 
+        }
+
+        img {
+            display: block; /* La imagen es un bloque */
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">Galeria</div>
+        <!-- Lista de enlaces del menú de navegación -->
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li> 
+            <li><a href="servicios.html">Servicios</a></li> 
+            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+            <li><a href="contacto.html">Contacto</a></li> 
+        </ul>
+        
+        <!-- Menú hamburguesa (visible en pantallas pequeñas) -->
+        <div class="hamburger" onclick="toggleMenu()"> <!-- Activa la función para mostrar el menú al hacer clic -->
+            <span></span> <!-- Líneas del icono del menú hamburguesa -->
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Contenido de la Página Sobre Mí -->
+    <section id="contenido">
+        <h1>Sobre Mí</h1> 
+        <img src="imagen1.png" alt="imagen"> 
+        <p>Ximena Alvarez</p> 
+        <p>Técnica en programación</p> 
+        <p>Aprendiendo más cada día</p> 
+    </section>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu'); /* Selecciona el menú */
+            menu.classList.toggle('show'); /* Alterna la clase 'show' para mostrar/ocultar el menú */
+        }
+    </script>
+</body>
+</html>

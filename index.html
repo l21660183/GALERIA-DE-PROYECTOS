@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">Galeria</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Sección de Galería de Proyectos -->
+    <section id="galeria">
+        <h2>Galería de Proyectos</h2>
+        <div class="gallery">
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/1.-MENSAJE/')">
+                <img src="IMG1.jpeg" alt="Proyecto 1">
+                <p>Actividad 1:Texto simple</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/2.-CAMBIAR-COLOR-FONDO/')">
+                <img src="IMG2.jpeg" alt="Proyecto 2">
+                <p>Actividad 2:Cambiar color de fondo </p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/3.-FORMULARIO-REGISTRO/')">
+                <img src="IMG3.png" alt="Proyecto 3">
+                <p>Actividad 3:Formulario registro</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/4.-FORMULARIO-SUMA-SIMPLE/')">
+                <img src="IMG4.jpeg" alt="Proyecto 4">
+                <p>Actividad 4:Formulario de suma simple</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/5.-CONTADOR-VARIABLES/')">
+                <img src="IMG5.jpeg" alt="Proyecto 5">
+                <p>Actividad 5:Contador de variables</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/6.-CAMBIAR-IMAGEN/')">
+                <img src="IMG6.jpeg" alt="Proyecto 6">
+                <p>Actividad 6:Cambiar imagenes</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/7.-TEMPORIZADOR/')">
+                <img src="IMG7.jpeg" alt="Proyecto 7">
+                <p>Actividad 7:Temporizador</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/8.-LISTA-DE-TAREAS/')">
+                <img src="IMG8.jpeg" alt="Proyecto 8">
+                <p>Actividad 8:Lista de tareas</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/9.-PIEDRA-PAPEL-TIJERA/')">
+                <img src="IMG9.jpeg" alt="Proyecto 9">
+                <p>Actividad 9:Piedra, papel o tijera</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/10.-FILTRO-TABLA/')">
+                <img src="IMG10.jpeg" alt="Proyecto 10">
+                <p>Actividad 10:Filtro de tabla</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/11.-GALERIA-IMAGENES/')">
+                <img src="IMG11.jpeg" alt="Proyecto 11">
+                <p>Actividad 11:galeria de imagenes</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/12.-CALCULADORA-BASICA/')">
+                <img src="IMG12.jpeg" alt="Proyecto 12">
+                <p>Actividad 12:Calculadora basica</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/13.-COVERTIDOR-UNIDADES/')">
+                <img src="IMG13.jpeg" alt="Proyecto 13">
+                <p>Actividad 13:Convertidor de unidades</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/14.-CONTADOR-PALAB-CARAC/')">
+                <img src="IMG14.jpeg" alt="Proyecto 14">
+                <p>Actividad 14:Contador de palabras y caracteres</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/15.-GALERIA-IMAGENES-UNSPLASH/')">
+                <img src="IMG15.jpeg" alt="Proyecto 15">
+                <p>Actividad 15:Galeria de imagenes unsplash</p>
+            </div>
+            <div class="gallery-item" onclick="openModal('https://l21660183.github.io/16.-NOTAS-LOCALSTORAGE/')">
+                <img src="IMG16.jpeg" alt="Proyecto 16">
+                <p>Actividad 16:Notas en localstroge</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="iframeModal" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

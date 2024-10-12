@@ -1,0 +1,193 @@
+/* Estilos del Menú de Navegación */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    /* Menú de navegación fijo en la parte superior */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333; /* Fondo oscuro */
+    color: rgb(255, 255, 255); /* Texto blanco */
+    display: flex; /* Flexbox para alinear elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre el logo y los enlaces */
+    align-items: center;
+    padding: 10px;
+    z-index: 1000; /* El menú estará por encima del contenido de la página */
+}
+
+nav .logo {
+    /* Estilos para el logo del menú */
+    font-size: 24px;
+    font-weight: bold; /* Texto en negrita */
+}
+
+nav ul {
+    /* Lista de navegación */
+    list-style: none; /* Quita los puntos de las listas */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Coloca los elementos del menú en línea */
+}
+
+nav ul li {
+    margin-left: 20px; /* Espacio entre los enlaces del menú */
+}
+
+nav ul li a {
+    /* Estilos de los enlaces de navegación */
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    padding: 8px 12px; /* Espacio alrededor del texto */
+    transition: background-color 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Fondo más claro al pasar el mouse sobre los enlaces */
+}
+
+.hamburger {
+    display: none; /* Oculto en pantallas grandes */
+    flex-direction: column; /* Las líneas del icono hamburguesa estarán una debajo de la otra */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el icono */
+}
+
+.hamburger span {
+    /* Líneas del menú hamburguesa */
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Líneas blancas */
+    margin: 4px 0; /* Espacio entre las líneas */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* El menú hamburguesa aparece en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column; /* Los enlaces del menú se colocan en una columna */
+        display: none; /* Ocultos por defecto en móviles */
+        background-color: #333; /* Fondo oscuro para el menú móvil */
+        position: absolute; /* Posiciona el menú debajo de la barra de navegación */
+        top: 100%;
+        left: 0;
+        width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    }
+
+    nav ul.show {
+        display: flex; /* El menú se muestra cuando se activa */
+    }
+
+    nav ul li {
+        text-align: center; /* Centra los elementos en el menú móvil */
+        margin: 0;
+    }
+}
+
+/* Galería de Proyectos */
+#galeria {
+    padding: 100px 20px; /* Espacio alrededor de la galería */
+    text-align: center; /* Centra el contenido de la galería */
+}
+
+.gallery {
+    display: flex; /* Los elementos se alinean horizontalmente */
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    flex-wrap: wrap; /* Permite que los elementos se muevan a una nueva línea si es necesario */
+    gap: 20px; /* Espacio entre los elementos de la galería */
+}
+
+.gallery-item {
+    /* Cada elemento de la galería tiene un ancho y alto fijo */
+    width: 200px;
+    height: 300px;
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    transition: transform 0.3s ease; /* Efecto suave de zoom al pasar el mouse */
+    display: flex; /* Flexbox para centrar el contenido */
+    flex-direction: column; /* El contenido dentro del contenedor se organiza verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+}
+
+.gallery-item img {
+    /* Estilos para las imágenes dentro de la galería */
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 150px; /* Altura fija para las imágenes */
+    border-radius: 8px; /* Esquinas redondeadas */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+}
+
+.gallery-item:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse sobre un elemento */
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none; /* El modal está oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1001; /* El modal estará por encima del resto del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente oscuro */
+    justify-content: center; /* Centra el modal en la pantalla */
+    align-items: center;
+}
+
+.modal-content {
+    /* Contenedor principal del modal */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%; /* Ancho del modal */
+    max-width: 800px; /* Máximo ancho */
+    position: relative; /* Posiciona el contenido dentro del modal */
+}
+
+.modal-content iframe {
+    /* Estilos para un iframe dentro del modal */
+    width: 100%; /* El iframe ocupa todo el ancho del modal */
+    height: 500px; /* Altura del iframe */
+}
+
+.close {
+    /* Botón de cerrar modal */
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Posición en la esquina superior derecha */
+    font-size: 24px; /* Tamaño del botón */
+    cursor: pointer; /* Cambia el cursor a mano al pasar sobre el botón */
+    color: #333; /* Color del botón de cerrar */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Menú hamburguesa aparece en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* El menú está oculto por defecto en móviles */
+        background-color: #333; /* Fondo oscuro */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex; /* El menú aparece cuando se activa */
+    }
+
+    nav ul li {
+        text-align: center; /* Centra los elementos del menú en móviles */
+        margin: 0;
+    }
+}

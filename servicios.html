@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <style>
+        /* Estilos del Menú de Navegación */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Asegura que el contenido no quede cubierto por el menú */
+        #contenido {
+            padding-top: 60px; /* Ajusta esto según el tamaño de tu menú */
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+                background-color: #333;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                text-align: center;
+                margin: 0;
+            }
+        }
+        /* Estilos de la sección de Servicios */
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Botón hamburguesa se muestra en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Oculto por defecto en móviles */
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar el menú cuando se active */
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">Galeria</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Contenido de la Página Servicios -->
+    <section id="contenido">
+        <h1>Servicios que ofrecemos</h1>
+        <img src="imagen3.png" alt="imagen">
+        <p>Desarrollo de aplicaciones web y móviles, adaptadas a tu gusto</p>
+    </section>
+    
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
